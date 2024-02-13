@@ -75,7 +75,6 @@ export class Carts {
             quantity.quantity = (!quantity.quantity)? 2 :quantity.quantity + 1
             const quantityPosition = cart.products.findIndex(producto => producto.product === pid)
             cart.products[quantityPosition] = quantity
-            cart.products = [quantity]
             nuevoCarrito[productPosition] = cart
             await fs.promises.writeFile(this.path, JSON.stringify(nuevoCarrito))
             return true
